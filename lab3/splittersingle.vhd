@@ -1,0 +1,18 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity splittersingle is 
+port(
+	A_in : in std_logic_vector(7 downto 0);
+	
+	A1_out : out std_logic_vector(7 downto 4);
+	A2_out : out std_logic_vector(3 downto 0));
+	
+end splittersingle;
+
+architecture Behavior of splittersingle is 
+begin 
+	A1_out <= A_in(3 downto 0);
+	A2_out <= A_in(7 downto 4);
+	
+end behavior; 

@@ -1,0 +1,19 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity ShareAppend is 
+port(
+	A_in : in std_logic_vector(6 downto 0);
+	B_in : in std_logic_vector(6 downto 0);
+	sharedBit: in std_logic;
+	
+	A_out : out std_logic_vector(7 downto 0);
+	B_out : out std_logic_vector(7 downto 0));
+	
+end ShareAppend;
+
+architecture Behavior of ShareAppend is 
+begin 
+	A_out<= sharedBit & A_in;
+	B_out<= B_in & sharedBit;
+end behavior; 

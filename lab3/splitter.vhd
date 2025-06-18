@@ -1,0 +1,24 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity splitter is 
+port(
+	A_in : in std_logic_vector(7 downto 0);
+	B_in : in std_logic_vector(7 downto 0);
+	
+	A1_out : out std_logic_vector(3 downto 0);
+	A2_out : out std_logic_vector(3 downto 0);
+	B1_out : out std_logic_vector(3 downto 0);
+	B2_out : out std_logic_vector(3 downto 0));
+	
+end splitter;
+
+architecture Behavior of splitter is 
+begin 
+	A1_out <= A_in(3 downto 0);
+	A2_out <= A_in(7 downto 4);
+	
+	B1_out <= A_in(3 downto 0);
+	B2_out <= A_in(7 downto 4);
+	
+end behavior; 
